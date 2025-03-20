@@ -14,7 +14,7 @@ export default function FeaturedFestivals() {
         const response = await fetch('/api/festivals?featured=true');
         if (response.ok) {
           const data = await response.json();
-          setFestivals(data);
+          setFestivals(data.slice(0,6));
         }
       } catch (error) {
         console.error('Error fetching featured festivals:', error);
