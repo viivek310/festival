@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,10 +21,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className="bg-gray-50 min-h-screen">
+        <Navbar />
+        <main className="max-w-6xl mx-auto px-4 py-8">
+          {children}
+        </main>
+        <footer className="bg-gray-800 text-white py-8">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="flex flex-col md:flex-row justify-between">
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Festival Guide</h3>
+                <p className="text-gray-300 text-sm">Discover amazing local festivals near you</p>
+              </div>
+              <div className="mt-4 md:mt-0">
+                <p className="text-sm text-gray-300">© {new Date().getFullYear()} Festival Guide. All rights reserved.</p>
+              </div>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
