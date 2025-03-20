@@ -11,6 +11,11 @@ export async function GET(request) {
         const searchTerm = searchParams.get('search');
         const tag = searchParams.get('tag');
         const date = searchParams.get('date');
+        const featured = searchParams.get("featured")
+
+        if (featured) {
+            query.isFeatured = true
+        }
 
         if (searchTerm) {
             query.$or = [
@@ -34,7 +39,6 @@ export async function GET(request) {
 
         await connectToDatabase();
         const festivals = await Festival.find(query).sort({ startDate: 1 });
-        console.log(festivals)
 
         return NextResponse.json(festivals);
     } catch (error) {

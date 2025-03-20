@@ -3,7 +3,8 @@
 
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
-import FestivalForm from '@/components/FestivalForm';
+import FestivalForm from '@/app/components/FestivalForm';
+// import FestivalForm from '@/components/FestivalForm';
 
 export default function EditFestivalPage() {
   const { id } = useParams();
