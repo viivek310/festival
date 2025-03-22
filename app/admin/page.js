@@ -63,7 +63,7 @@ export default function AdminPage() {
           <p className="text-gray-500">Loading festivals...</p>
         </div>
       ) : (
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="bg-white rounded-lg shadow-md overflow-hidden overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
@@ -133,7 +133,7 @@ export default function AdminPage() {
           </table>
         </div>
       )}
-      {festivals.length===0&&<div className='text-center my-5'>No festivals</div>}
+      {festivals.length===0&&!isLoading&&<div className='text-center my-5'>No festivals</div>}
     </div>
   );
 }

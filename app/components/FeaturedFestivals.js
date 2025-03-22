@@ -29,7 +29,9 @@ export default function FeaturedFestivals() {
   if (isLoading) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-500">Loading featured festivals...</p>
+        <div className="text-gray-500 flex justify-center">
+          <div className='h-16 aspect-square rounded-full border-4 border-gray-500 border-t-transparent animate-spin'></div>
+        </div>
       </div>
     );
   }
